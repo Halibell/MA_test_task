@@ -50,35 +50,6 @@ flag = false
 
   console.log(`Apples - ${fruitData.weight}`);
 
- /* let filterByWatermelon = products.filter(function (item) {
-    return item.item == "watermelon";
-  });
-
-  let sumWatermelon = filterByWatermelon.reduce(
-    (sum, current) => sum + current.quantity,
-    0
-  );
-
-  console.log(`Watermelon - ${sumWatermelon}`);
-
-    let filterByApples = products.filter(function (item) {
-    return item.item == "apple";
-  });
-
-  let sumApples = filterByApples.reduce(
-    (sum, current) => sum + current.weight,
-    0
-  );
-
-  console.log(`Apples - ${sumApples}`);
-*/
- /* const sortedByABC = products.sort(function (a, b) {
-    let itA = a.item;
-    let itB = b.item;
-    if (itA < itB) return -1;
-    else if (itA > itB) return 1;
-    return 0;*/
-//const sortedByABC = products.sort((a,b) => (a.item > b.item) ? 1 : ((b.item > a.item) ? -1 : 0)); 
  const sortedByABC = products.sort(function(a, b)  {a.item.localeCompare(b.item)});
 
   console.log("Sorted by alphabet");
@@ -106,23 +77,6 @@ flag = false
   })[0];
   console.log(`The cheapest orange type is: ${chipOr.type} - ${chipOr.pricePerKilo}`)
 
-  /*let filterByOrange = products.filter(function (item) {
-    return item.item == "orange";
-  });
-
-  let sortedByOrange = filterByOrange.sort(function (a, b) {
-    let priceA = +a.pricePerKilo.replace(",", ".").slice(1);
-    let priceB = +b.pricePerKilo.replace(",", ".").slice(1);
-   return priceA - priceB;
-  });
-
-  console.log(
-    `The cheapest orange type is: ${sortedByOrange[0].type} ` +
-      sortedByOrange[0].pricePerKilo
-  );*/
-
-  
-
   products.forEach(function (fruit) {
     let price = fruit.pricePerKilo || fruit.pricePerItem;
     price = +price.replace(",", ".").slice(1);
@@ -149,13 +103,3 @@ flag = false
 }
 
 console.log(calculateProducts(store));
-
-/*function isNumber(number){
-  return typeof number == 'number';
-}
-console.log((isNumber));
-function isString(item){
-  return typeof item == 'string';
-}
-console.log((isString));
-    */    
